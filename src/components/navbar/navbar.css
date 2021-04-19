@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+}
+.avatar {
+    height: 20px;
+    width: 20px;
+}
+.links-list {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+    
+}
+.links-link {
+    padding: 21px;
+}
+.right {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
