@@ -9,7 +9,7 @@ export const Navbar = (props) => {
     
     return (
         <header className='navbar'>
-            <img src={logo} alt='logo'/>
+            <img className='cart-icon' src={logo} alt='logo'/>
             <nav>
                 <ul className='links-list'>
                     <li className='links-link'>{props.navigation[0]}</li>
@@ -20,7 +20,7 @@ export const Navbar = (props) => {
             </nav>
             <div className='right'>
                 <input type='text' placeholder='Search'/>
-                <span>
+                <span className='cart'>
                     <img className='cart-icon' src={basket}/>
                     <p>{props.cartQuantity}</p>
                 </span>
