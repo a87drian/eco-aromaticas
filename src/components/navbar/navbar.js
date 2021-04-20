@@ -1,4 +1,6 @@
 import './navbar.css'
+import basket from '../../images/shopping-cart.svg'
+import logo from '../../images/planet-earth.svg'
 
 export const Navbar = (props) => {
     const handleClick = () => {
@@ -7,7 +9,7 @@ export const Navbar = (props) => {
     
     return (
         <header className='navbar'>
-            <img src='' alt='logo'/>
+            <img src={logo} alt='logo'/>
             <nav>
                 <ul className='links-list'>
                     <li className='links-link'>{props.navigation[0]}</li>
@@ -19,7 +21,7 @@ export const Navbar = (props) => {
             <div className='right'>
                 <input type='text' placeholder='Search'/>
                 <span>
-                    <img className='cart-icon' src=''/>
+                    <img className='cart-icon' src={basket}/>
                     <p>{props.cartQuantity}</p>
                 </span>
                     <img className='avatar' src={props.user.avatar} alt='User' onClick={handleClick}/>

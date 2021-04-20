@@ -9,6 +9,16 @@
     height: 20px;
     width: 20px;
 }
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 12px 0 18px;
+}
+.cart-icon{
+    height: 20px;
+    width: 20px;
+}
 .links-list {
     display:flex;
     align-items: center;
