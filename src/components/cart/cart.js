@@ -4,25 +4,20 @@ export const Cart = (props) => {
         <body>
             {console.log(props.list[0].product_image)}
 
-            <div>
-                <h3>{props.list[0].product_name}</h3>    
-                <img src={props.list[0].product_image} />
-                <h4>{props.list[0].product_price}</h4>
+            {props.list.map((p,i) => (
+
+                <div>
+                    <h3>{p.product_name}</h3>    
+                    <img src={p.product_image} />
+                    <h4>{p.product_price}</h4>
                 
+                </div>  )
+             
+             )}            
 
-            </div>
- 
-
-
-            
-
-            
-            
-
-            
 
 
         </body>
-        )
+    )
     
 }
