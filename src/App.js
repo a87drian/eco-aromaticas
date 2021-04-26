@@ -2,8 +2,10 @@
 import './App.css';
 import {Navbar} from './components/navbar/navbar'
 import {Cart} from './components/cart/cart'
+import {ItemCount} from './components/itemCount/itemCount' 
 
 function App() {
+  const [contador, setCount] = useState(0)
   const USER = {
     name: 'Adrian Chaves',
     avatar: 'https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1482&q=80'
@@ -36,7 +38,9 @@ function App() {
   return (
     <div className="App">
       <Navbar user={USER} cartQuantity= {CART} navigation={NAVIGATION}/>
-      <Cart list={LISTPRODUCTS} />
+      <Cart list={LISTPRODUCTS}  />
+      <ItemCount value={contador} onClick={setCount(contador + 1)}/>
+    
     </div>
 
   );

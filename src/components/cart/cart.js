@@ -10,7 +10,8 @@ export const Cart = (props) => {
                     <h3>{p.product_name}</h3>    
                     <img src={p.product_image} />
                     <h4>{p.product_price}</h4>
-                
+                    <input type="number"></input>
+                    <button type="button">Agregar</button>
                 </div>  )
              
              )}            
