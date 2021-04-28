@@ -3,6 +3,7 @@ import './App.css';
 import {Navbar} from './components/navbar/navbar'
 import {ItemListContainer} from './components/itemListContainer/itemListContainer'
 import {ItemCount} from './components/ItemCount/ItemCount'
+import { useState } from 'react';
 
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
     avatar: 'https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1482&q=80'
 
   }
-  const LISTPRODUCTS = [{"id":1,"product_name":"Garbag Bags - Black","product_image":"http://dummyimage.com/198x100.png/dddddd/000000","product_price":343.77},
+  const [LISTPRODUCTS,setListProducts] = useState('')
+
+  let promesa = new Promise((resolve, reject) => {
+    setTimeout(() =>{
+       const PRODUCTOS = [{"id":1,"product_name":"Garbag Bags - Black","product_image":"http://dummyimage.com/198x100.png/dddddd/000000","product_price":343.77},
 {"id":2,"product_name":"Blouse / Shirt / Sweater","product_image":"http://dummyimage.com/207x100.png/dddddd/000000","product_price":960.7},
 {"id":3,"product_name":"Squash - Guords","product_image":"http://dummyimage.com/227x100.png/5fa2dd/ffffff","product_price":164.71},
 {"id":4,"product_name":"Broom And Broom Rack White","product_image":"http://dummyimage.com/197x100.png/cc0000/ffffff","product_price":175.24},
@@ -34,6 +39,14 @@ function App() {
 {"id":20,"product_name":"Bread - Hamburger Buns","product_image":"http://dummyimage.com/201x100.png/5fa2dd/ffffff","product_price":180.61}]
 
 
+      
+    }, 5000)
+  })
+  .then((success) => {
+    setListProducts(success)  
+  })
+
+ 
   const CART = 2
   const NAVIGATION = ['Nosotros','Productos','Contacto']
   return (
