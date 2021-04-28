@@ -1,7 +1,7 @@
 
 import './App.css';
 import {Navbar} from './components/navbar/navbar'
-import {itemlistcontainer} from './components/itemListContainer/itemListContainer'
+import {ItemListContainer} from './components/itemListContainer/itemListContainer'
 import {ItemCount} from './components/ItemCount/ItemCount'
 
 
@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Navbar user={USER} cartQuantity= {CART} navigation={NAVIGATION}/>
-      <itemlistcontainer list={LISTPRODUCTS}  />
+      <ItemListContainer list={LISTPRODUCTS}  />
       <ItemCount />
 
     

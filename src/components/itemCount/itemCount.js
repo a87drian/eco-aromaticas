@@ -8,7 +8,7 @@ export const ItemCount = () => {
     if (contador < 0) {
       setContador(0);
     } else {
-      if (contador == 11) {
+      if (contador === 11) {
         setContador(10);
       }
     }
