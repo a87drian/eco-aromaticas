@@ -1,9 +1,10 @@
 import React from "react";
 import './App.css';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import {Navbar} from './components/navbar/navbar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer' 
+import {Navbar} from './components/navbar/navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer' ;
+
 
 import {ItemCount} from './components/ItemCount/ItemCount'
 
