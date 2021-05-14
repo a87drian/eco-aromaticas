@@ -4,11 +4,9 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import {Navbar} from './components/navbar/navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer' ;
-
-
 import {ItemCount} from './components/ItemCount/ItemCount'
-
 import {useState} from 'react';
+import CartContextProvider from "./components/Context/Context";
 
 
 function App() {
@@ -19,15 +17,19 @@ function App() {
   const CART = 2
   const NAVIGATION = ['Nosotros','Productos','Contacto']
   return (
-    
+    <div>
+     <CartContextProvider>
       <BrowserRouter>
            <Navbar user={USER} cartQuantity= {CART} navigation={NAVIGATION}/>
           <Switch>
             <Route exact path="/" component={ItemListContainer} />
             <Route path="/itemdetail/:id" component={ItemDetailContainer} />
+
             
           </Switch>
       </BrowserRouter>
+      </CartContextProvider>
+    </div>
   )
 }
 
