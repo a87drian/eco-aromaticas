@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; //importo useeffect también
+import React, { useState, useEffect } from "react"; 
 import Item from "../Item/Item"
 
 function ItemList(props) {

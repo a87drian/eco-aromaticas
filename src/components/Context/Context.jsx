@@ -3,12 +3,13 @@ import { useState, useEffect} from 'react';
 
 export const CartContext = React.createContext([]);
 
+
 const CartContextProvider = props => {
     
     const [products, setProducts] = useState([]);
 
-    const addProducts = (product, quantity) => {
-        setProducts([...products, {'nombre':product, 'quantity':quantity}]);
+    function addProduct(product, quantity)  {
+        setProducts([...products, {'nombre':product, 'quantity':quantity }]);
     };
     const productsCount = () => {
         return products.reduce((acc,p) => (acc += p.quantity), 0);

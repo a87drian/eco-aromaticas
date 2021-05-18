@@ -1,8 +1,12 @@
 import './navbar.css'
 import basket from '../../images/shopping-cart.svg'
 import logo from '../../images/planet-earth.svg'
+import React,{useContext, useEffect, useState} from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../Context/Context"
 
 export const Navbar = (props) => {
+    const [products, productsCount, addProduct, delProduct, getGrandTotal] = useContext(CartContext);
     const handleClick = () => {
         alert(`Hola ${props.user.name}`)
     }
@@ -18,15 +22,17 @@ export const Navbar = (props) => {
 
                 </ul>
             </nav>
-            <div className='right'>
-                <input type='text' placeholder='Search'/>
-                <span className='cart'>
-                    <img className='cart-icon' src={basket}/>
-                    <p>{props.cartQuantity}</p>
-                </span>
+            <Link to={'/cart'}>
+                <div className='right'>
+                    <input type='text' placeholder='Search'/>
+                    <span className='cart'>
+                        <img className='cart-icon' src={basket}/>
+                        <p>{productsCount()}</p>
+                    </span>
                     <img className='avatar' src={props.user.avatar} alt='User' onClick={handleClick}/>
                 
-            </div>
+                </div>
+            </Link>
         </header>
         
         )

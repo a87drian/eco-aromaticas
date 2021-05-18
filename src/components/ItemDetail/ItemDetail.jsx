@@ -1,24 +1,25 @@
-import React, {useState, useEffect, useContext} from 'react';
-import  CartContext  from "../Context/Context";
+import React, {useState,  useContext} from "react";
+import  {CartContext}  from "../Context/Context";
 import {ItemCount} from "../ItemCount/ItemCount";
 
 export default function ItemDetail(props) {
 
     const [count, setCount] = useState(0);
-    const [products, productsCount, addProduct, delProduct, getGrandTotal] = useContext(CartContext);
 
-    function giveMount(c) {  
+    const [products, productsCount, addProducts, delProduct, getGrandTotal] = useContext(CartContext);
+
+    function giveMount(c) {
         setCount(c);
     }
 
     return (
         <div>
-            func={giveMount}
             <ItemCount
+            func={giveMount}
             nombre={props.nombre}
             precio={props.precio}
             />
-            <input onClick={()=> addProduct(props.nombre, count)}  type="button" value={`Añadir al carro ${count}` } />
+            <input onClick={()=> addProducts(props.nombre, count)}  type="button" value={`Añadir al carro ${count}` } />
         </div>
     );
 }
