@@ -7,12 +7,20 @@ import { getFirestore } from '../Firebase/'
 export default function Cart() {
   const [products, productsCount, addProduct, delProduct, getGrandTotal] = useContext(CartContext);
   const [OrderId, setOrderId] = useState(0);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  
   const handleClick = () => {
     const db = getFirestore();
     const order = db.collection("order");
     const newOrder = {
-      buyer: 'adrian',
-      items: ''
+      buyer: {
+        name,
+        email,
+        phone
+      },
+      products
   
     };
     order.add(newOrder).then(({id}) => {
@@ -39,6 +47,10 @@ export default function Cart() {
         </div>
       ))
       }
+      
+      <label> name</label> <input type="name" onBlur={(e) => setName(e.target.value)} />
+       <label> phone</label><input type="phone"  onBlur={(e) => setPhone(e.target.value)}/>
+       <label> email</label><input type="email" onBlur={(e) => setEmail(e.target.value)} />
       <button onClick={handleClick}>Comprar</button>
     </div>
   )
