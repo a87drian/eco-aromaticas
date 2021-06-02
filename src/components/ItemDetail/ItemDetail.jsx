@@ -3,7 +3,7 @@ import  {CartContext}  from "../Context/Context";
 import {ItemCount} from "../ItemCount/ItemCount";
 
 export default function ItemDetail(props) {
-
+    console.log(props)
     const [count, setCount] = useState(0);
 
     const [products, productsCount, addProducts, delProduct, getGrandTotal] = useContext(CartContext);
@@ -16,10 +16,10 @@ export default function ItemDetail(props) {
         <div>
             <ItemCount
             func={giveMount}
-            nombre={props.nombre}
-            precio={props.precio}
+            name={props.name}
+            price={props.price}
             />
-            <input onClick={()=> addProducts(props.nombre, count)}  type="button" value={`Añadir al carro ${count}` } />
+            <input onClick={()=> addProducts(props.name, count)}  type="button" value={`Añadir al carro ${count}` } />
         </div>
     );
 }

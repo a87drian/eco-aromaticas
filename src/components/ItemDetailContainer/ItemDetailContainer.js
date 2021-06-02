@@ -1,12 +1,13 @@
 import React, { useState, use} from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { getFirestore } from '../Firebase/'
 
 export default function ItemDetailContainer(props) {
     const [item,setItem] = useState(false);
     let id = props.match.params.id;
         
-    useEffect(() => {
+ /*   useEffect(() => {
     
         setTimeout(() => {
     
@@ -18,12 +19,31 @@ export default function ItemDetailContainer(props) {
                 setItem(data);
             });
         },1000);
-    }, []);
+    }, []);*/
+    useEffect(() => {
+
+        const db = getFirestore();
+        const item = db.collection("items").doc(id);
+
+        item.get().then((doc)=>{
+            if(doc.exists){
+                const data = {id:doc.id,...doc.data()}
+                setItem(data)
+                console.log(item.id);
+            
+
+            }
+        }).catch((error) => {
+            console.log("Error =>" + error);
+        })
+
+
+    }, [])
 
     return (
          <div>
           {item ? (
-         <ItemDetail nombre={item.nombre} precio={item.precio} id={item.id} />
+         <ItemDetail name={item.name} price={item.price} id={item.id} />
         ) : (
          <p>LOADING...</p>
         )}

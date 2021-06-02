@@ -18,8 +18,8 @@ export const ItemCount = (props) => {
   return (
     <div>
       <hr />
-      <h4>{props.nombre}</h4>
-      <h4>Precio: {props.nombre}</h4>
+      <h4>{props.name}</h4>
+      <h4>Precio: {props.price}</h4>
       <button min={0} onClick={() => setContador(contador + 1)}>
         +
       </button>
