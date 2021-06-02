@@ -41,9 +41,9 @@ function ItemList(props) {
                  <Item
                     id={p.id}
                     key={i}
-                    nombre={p.nombre}
-                    precio={p.precio}
-                    categoria={p.categoria}
+                    nombre={p.name}
+                    precio={p.price}
+                    categoria={p.category}
                     />
              ))
          ) : (
