@@ -4,18 +4,18 @@ import { getFirestore } from '../Firebase/'
 
 
 function ItemList(props) {
-    const [items, setItems] = useState(false);
-    useEffect(() => {
-        setTimeout(() =>{
-                fetch("https://5f3c95f36c11f80016d6f21e.mockapi.io/bitbuyer/items")
-                .then(response => {
-                return response.json();
-                })
-                .then(data => {
-                setItems(data);
-                });
-            }, 3000);
-        }, []);
+    // const [items, setItems] = useState(false);
+    // useEffect(() => {
+    //     setTimeout(() =>{
+    //             fetch("https://5f3c95f36c11f80016d6f21e.mockapi.io/bitbuyer/items")
+    //             .then(response => {
+    //             return response.json();
+    //             })
+    //             .then(data => {
+    //             setItems(data);
+    //             });
+    //         }, 3000);
+    //     }, []);
 
     const [products, setProducts] = useState([]);
 
@@ -34,12 +34,9 @@ function ItemList(props) {
 
         }, [] )
 
-
-
-        
    return (
      <div>
-         {items ? (
+         {products ? (
              products.map((p,i) => (
                  <Item
                     id={p.id}
