@@ -28,8 +28,9 @@ function ItemList(props) {
                     if(querySnapshot === 0 ) {
                         console.log("vacio");
                     }
-                    setProducts(querySnapshot.docs.map(doc => doc.data()))
-                }
+                    const data = querySnapshot.docs.map((doc) => ({id:doc.id, ...doc.data()}))
+                    setProducts(data);
+                }       
             )
 
         }, [] )
