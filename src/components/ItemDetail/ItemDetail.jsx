@@ -20,6 +20,7 @@ export default function ItemDetail(props) {
             price={props.price}
             />
             <input onClick={()=> addProducts(props.name, count)}  type="button" value={`Añadir al carro ${count}` } />
+            
         </div>
     );
 }
